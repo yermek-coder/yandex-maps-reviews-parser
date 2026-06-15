@@ -40,7 +40,7 @@ class YandexController extends Controller
 
         // app developed in kazakhstan, other countries might have different outputs
         // for sake of fixing this quickly let's do this hack
-        $kzUrl = str_replace("yandex.ru", "yandex.kz", $url);
+        $kzUrl = preg_replace('/^(https?:\/\/)?(www\.)?yandex\.[a-z]{2,6}/i', '$1$2yandex.kz', $url);
 
         try {
             $result = $this->parserService->syncReviews($kzUrl, $orgId);

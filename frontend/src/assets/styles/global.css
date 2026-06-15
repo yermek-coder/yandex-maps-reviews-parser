@@ -1,0 +1,14 @@
+@import 'tailwindcss';
+
+/* Настройка кастомного шрифта Comfortaa для всего приложения */
+@layer base {
+  * {
+    font-family:
+      'Comfortaa',
+      system-ui,
+      -apple-system,
+      BlinkMacSystemFont,
+      'Segoe UI',
+      sans-serif;
+  }
+}

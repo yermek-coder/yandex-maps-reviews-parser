@@ -1,0 +1,42 @@
+# Dependencies
+node_modules/
+vendor/
+
+# Laravel
+backend/storage/*.key
+backend/.env
+backend/.env.backup
+backend/.env.production
+backend/.env.example
+backend/.phpunit.result.cache
+backend/Homestead.json
+backend/Homestead.yaml
+backend/npm-debug.log
+backend/yarn-error.log
+backend/storage/logs/laravel.log
+
+# Vue
+frontend/node_modules/
+frontend/.env
+frontend/.env.local
+frontend/.env.example
+frontend/.env.*.local
+frontend/dist/
+frontend/npm-debug.log*
+frontend/yarn-debug.log*
+frontend/yarn-error.log*
+frontend/pnpm-debug.log*
+
+# Docker
+docker-compose.override.yml
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# OS
+Thumbs.db

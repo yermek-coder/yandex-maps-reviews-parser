@@ -26,6 +26,8 @@ class YandexController extends Controller
      */
     public function parseReviews(Request $request): JsonResponse
     {
+        set_time_limit(300);
+
         $request->validate([
             'url' => 'required|url',
         ]);
@@ -40,10 +42,10 @@ class YandexController extends Controller
 
         // app developed in kazakhstan, other countries might have different outputs
         // for sake of fixing this quickly let's do this hack
-        $kzUrl = preg_replace('/^(https?:\/\/)?(www\.)?yandex\.[a-z]{2,6}/i', '$1$2yandex.kz', $url);
+        // $kzUrl = preg_replace('/^(https?:\/\/)?(www\.)?yandex\.[a-z]{2,6}/i', '$1$2yandex.kz', $url);
 
         try {
-            $result = $this->parserService->syncReviews($kzUrl, $orgId);
+            $result = $this->parserService->syncReviews($url, $orgId);
             $organization = $result['organization'];
 
             return response()->json([

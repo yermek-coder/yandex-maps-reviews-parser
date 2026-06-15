@@ -7,7 +7,6 @@ backend/storage/*.key
 backend/.env
 backend/.env.backup
 backend/.env.production
-backend/.env.example
 backend/.phpunit.result.cache
 backend/Homestead.json
 backend/Homestead.yaml
@@ -19,7 +18,6 @@ backend/storage/logs/laravel.log
 frontend/node_modules/
 frontend/.env
 frontend/.env.local
-frontend/.env.example
 frontend/.env.*.local
 frontend/dist/
 frontend/npm-debug.log*

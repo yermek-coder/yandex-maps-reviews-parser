@@ -38,8 +38,12 @@ class YandexController extends Controller
             return response()->json(['error' => 'Неверный формат URL Яндекса.'], 400);
         }
 
+        // app developed in kazakhstan, other countries might have different outputs
+        // for sake of fixing this quickly let's do this hack
+        $kzUrl = str_replace("yandex.ru", "yandex.kz", $url);
+
         try {
-            $result = $this->parserService->syncReviews($url, $orgId);
+            $result = $this->parserService->syncReviews($kzUrl, $orgId);
             $organization = $result['organization'];
 
             return response()->json([

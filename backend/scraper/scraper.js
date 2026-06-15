@@ -26,6 +26,9 @@ async function parseYandexReviews(url) {
                 // Дополнительные фичи маскировки на уровне аргументов Chromium:
                 "--disable-blink-features=AutomationControlled", // Скрывает флаг автоматизации
                 "--lang=ru-RU,ru", // Жестко задаем русский язык локали
+                "--disable-gpu",
+                "--disable-software-rasterizer",
+                "--disable-dev-shm-usage",
             ],
         });
 
